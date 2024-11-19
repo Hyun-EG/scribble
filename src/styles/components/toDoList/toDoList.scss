@@ -1,0 +1,103 @@
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+    transition: 2.5s;
+  }
+}
+
+.toDoList {
+  background: rgb(73, 163, 248);
+  &__container {
+    @include flex;
+    width: 100%;
+    height: 100vh;
+
+    &__box {
+      @include flex(center, start);
+      width: 52.083vw;
+      height: 92.593vh;
+      background: white;
+      border: 1px solid #cccccc;
+      border-radius: 12px;
+
+      &__header {
+        @include column-flex;
+        width: 41.667vw;
+        padding: 1.852vh;
+        gap: 10px;
+
+        &_title {
+          @include text-style(30, black, 400);
+
+          &_point {
+            @include text-style(30, rgb(73, 163, 248), 400);
+            cursor: pointer;
+          }
+        }
+
+        &__inputArea {
+          @include flex;
+          padding-bottom: 1.852vh;
+          gap: 10px;
+
+          &_input {
+            @include text-style(16, rgb(73, 163, 248), 400);
+            width: 26.042vw;
+            height: 3.704vh;
+            padding-left: 0.625vw;
+            border-radius: 12px;
+            border: 1px solid #cccccc;
+            outline: none;
+          }
+
+          &_btn {
+            @include text-style(16, white, 400);
+            width: 5.208vw;
+            height: 3.704vh;
+            border-radius: 12px;
+            background: rgb(73, 163, 248);
+          }
+        }
+      }
+      &__main {
+        width: 41.667vw;
+        &__nav {
+          @include flex(start, start);
+          @include text-style(16, black, 400);
+          margin-bottom: 0.926vh;
+          gap: 20px;
+          border-bottom: 1px solid rgb(73, 163, 248);
+
+          &_option {
+            cursor: pointer;
+            padding-right: 0.26vw;
+
+            &:hover {
+              @include text-style(16, rgb(136, 194, 248), 400);
+              transition: 0.3s;
+            }
+          }
+        }
+        &__tasks {
+          @include text-style(16, black, 400);
+          line-height: 30px;
+
+          &_task {
+            @include flex(between, center);
+
+            &_options {
+              @include flex;
+              gap: 10px;
+
+              &_option {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
